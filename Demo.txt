@@ -1,0 +1,34 @@
+package com.org.music;
+
+
+import java.util.*;
+
+
+public class MusicPlayer {
+
+    public static void main(String[] args) {
+
+        List<String > musicList= new ArrayList<>(3);
+
+
+        System.out.println("Music player started...!");
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter how many songs you want to add int player...!");
+        int input = sc.nextInt();
+        while(input-- !=0) {
+            System.out.println("Type the song name....(S1/S2/S3/S4)");
+            String song = sc.next();
+            musicList.add(song);
+            if(musicList.size()>3){
+                musicList.remove(0);
+                musicList.add(song);
+            }
+
+        }
+       for(int i=0; i<3; i++){
+           System.out.println("The user songs are "+ musicList.get(i));
+       }
+
+    }
+}
